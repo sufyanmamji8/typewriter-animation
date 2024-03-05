@@ -1,34 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color: black;
-    display: inline-block;
+body {
+  background-color: black;
+  display: inline-block;
+  width: 100vw;
+  color: blue;
+  overflow-x: hidden;
 }
 
-p{
-    font-size: 40px;
-    color: blue;
-    letter-spacing: 5px;
-    border-right: 2px solid black;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    animation: typing 5s steps(58) infinite,
+p {
+  font-size: 35px;
+  color: blue;
+  letter-spacing: 5px;
+  border-right: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  animation: typing 5s steps(70) infinite,
     cursor 0.4s step-end infinite alternate;
 }
 
 @keyframes cursor {
-    50%{
-        border-color: transparent;
-    }
+  50% {
+    border-color: transparent;
+  }
 }
 
 @keyframes typing {
-    from{
-        width: 0;
-    }
+  from {
+    width: 0;
+  }
+}
+
+.wrapper {
+  margin-top: 20vh;
+  display: inline-flex;
+}
+
+.still-txt {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+}
+
+.changing-txt {
+  margin-left: 15px;
+  overflow: hidden;
+  height: 10vh;
+  line-height: 60px;
+}
+
+.changing-txt li {
+  list-style: none;
+  color: blueviolet;
+  font-size: 50px;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(5) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -300px;
+  }
+}
+
+.changing-txt li span {
+  position: relative;
+}
+.changing-txt li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-right: 2px solid blueviolet;
+  animation: typings 2s infinite steps(19);
+  background: #000;
+}
+
+@keyframes typings {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
 }
 
